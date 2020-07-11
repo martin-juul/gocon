@@ -1,0 +1,8 @@
+{
+  "name": "GoCon",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "cdb95bbf"
+}
