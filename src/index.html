@@ -2,25 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Ionic App</title>
+  <meta charset="utf-8"/>
+  <title>GoCon</title>
 
-  <base href="/" />
+  <base href="./"/>
 
-  <meta name="color-scheme" content="light dark" />
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="viewport"
+        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png"/>
 
   <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 </head>
 
 <body>
-  <app-root></app-root>
+<app-root></app-root>
+<!--suppress JSConstantReassignment -->
+<script>
+  function attachElectronGlobals() {
+    try {
+      if ((process.versions.electron) === 'string' && process.versions.hasOwnProperty('electron')) {
+        const sqlite3 = require('sqlite3');
+        const fs = require('fs');
+        const path = require('path');
+        window.sqlite3 = sqlite3;
+        window.fs = fs;
+        window.path = path;
+      }
+    } catch (e) {
+      console.error('[GoCon:electron]: failed to attach globals', e);
+    }
+  }
+
+  if (typeof process !== 'undefined') {
+    attachElectronGlobals();
+  }
+
+</script>
 </body>
 
 </html>

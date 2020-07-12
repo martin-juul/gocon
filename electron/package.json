@@ -1,32 +1,36 @@
 {
-  "name": "GoCon",
+  "name": "gocon",
   "version": "1.0.0",
   "description": "An Amazing Capacitor App",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc",
-    "electron:start": "npm run build && electron ./",
-    "electron:pack": "npm run build && electron-builder build --dir",
-    "electron:build-windows": "npm run build && electron-builder build --windows",
-    "electron:build-mac": "npm run build && electron-builder build --mac"
+    "electron:start": "yarn run build && electron ./",
+    "electron:pack": "yarn run build && electron-builder build --dir",
+    "electron:build-windows": "yarn run build && electron-builder build --windows",
+    "electron:build-mac": "yarn run build && electron-builder build --mac",
+    "postinstall": "electron-rebuild -f -w sqlite3"
   },
   "dependencies": {
-    "@capacitor-community/electron-core": "latest"
+    "@capacitor-community/electron-core": "latest",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
+    "@types/sqlite3": "^3.1.6",
     "electron": "~9.0.3",
     "electron-builder": "~22.7.0",
+    "electron-rebuild": "^1.11.0",
     "typescript": "~3.9.5"
   },
   "keywords": [
     "capacitor",
     "electron"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "Martin Juul <code@juul.xyz>",
+  "license": "proprietary",
   "build": {
-    "appId": "com.example.capacitor-app",
-    "productName": "Capacitor App",
+    "appId": "app.martin-juul.gocon",
+    "productName": "GoCon",
     "files": [
       "assets/*",
       "build/index.js",

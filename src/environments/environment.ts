@@ -1,9 +1,31 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { Logger, LogLevel } from '../app/logging';
+import { Environment } from '../app/interfaces/environment';
+import { AttachmentState } from 'ionic-feedback-module';
 
-export const environment = {
-  production: false
+export const environment: Environment = {
+  production: false,
+  logging: {
+    logLevels: [
+      {
+        loggerName: Logger.ROOT,
+        logLevel: LogLevel.DEBUG,
+      },
+    ],
+  },
+
+  feedback: {
+    isEnabled: true,
+    appKey: '',
+    appSecret: '',
+    language: 'en',
+    categories: [
+      'Issue',
+    ],
+    attachScreenshot: AttachmentState.Ask,
+    attachDeviceInfo: AttachmentState.Yes,
+    attachAppInfo: AttachmentState.Yes,
+    attachLogMessages: AttachmentState.Yes,
+  },
 };
 
 /*
