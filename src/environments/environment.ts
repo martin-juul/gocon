@@ -1,6 +1,12 @@
-import { Logger, LogLevel } from '../app/logging';
-import { Environment } from '../app/interfaces/environment';
-import { AttachmentState } from 'ionic-feedback-module';
+import { Environment, Logger, LogLevel } from './environment.model';
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+import 'zone.js/dist/zone-error'; // Included with Angular CLI.
 
 export const environment: Environment = {
   production: false,
@@ -10,29 +16,35 @@ export const environment: Environment = {
         loggerName: Logger.ROOT,
         logLevel: LogLevel.DEBUG,
       },
+      {
+        loggerName: 'StoreService',
+        logLevel: LogLevel.DEBUG,
+      },
+      {
+        loggerName: 'Ionic.Logging.Viewer.Component',
+        logLevel: LogLevel.OFF,
+      },
+      {
+        loggerName: 'Ionic.Logging.Viewer.Levels.Component',
+        logLevel: LogLevel.OFF,
+      },
+      {
+        loggerName: 'Ionic.Logging.Viewer.Filter.Service',
+        logLevel: LogLevel.OFF,
+      },
+      {
+        loggerName: 'Ionic.Logging.Viewer.Search.Component',
+        logLevel: LogLevel.OFF,
+      }
     ],
-  },
-
-  feedback: {
-    isEnabled: true,
-    appKey: '',
-    appSecret: '',
-    language: 'en',
-    categories: [
-      'Issue',
-    ],
-    attachScreenshot: AttachmentState.Ask,
-    attachDeviceInfo: AttachmentState.Yes,
-    attachAppInfo: AttachmentState.Yes,
-    attachLogMessages: AttachmentState.Yes,
+    localStorageAppender: {
+      localStorageKey: 'gocon.logging',
+      threshold: LogLevel.INFO,
+      maxMessages: 250,
+    },
+    browserConsoleAppender: {
+      threshold: LogLevel.ALL,
+    },
   },
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

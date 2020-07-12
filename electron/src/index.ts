@@ -1,8 +1,11 @@
 import { app } from 'electron';
 import { createCapacitorElectronApp } from '@capacitor-community/electron-core';
+import * as Sentry from '@sentry/electron';
 
 // The MainWindow object can be accessed via myCapacitorApp.getMainWindow()
 const myCapacitorApp = createCapacitorElectronApp();
+
+Sentry.init({dsn: 'https://08b788cb163243bab27624fe106b92ad@o132444.ingest.sentry.io/5331735'});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

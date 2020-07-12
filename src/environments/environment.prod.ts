@@ -1,6 +1,4 @@
-import { Logger, LogLevel } from '../app/logging';
-import { Environment } from '../app/interfaces/environment';
-import { AttachmentState } from 'ionic-feedback-module';
+import { Environment, Logger, LogLevel } from './environment.model';
 
 export const environment: Environment = {
   production: true,
@@ -12,19 +10,5 @@ export const environment: Environment = {
         logLevel: LogLevel.ERROR,
       },
     ],
-  },
-
-  feedback: {
-    isEnabled: true,
-    appKey: '',
-    appSecret: '',
-    language: 'en',
-    categories: [
-      'Issue',
-    ],
-    attachScreenshot: AttachmentState.Ask,
-    attachDeviceInfo: AttachmentState.Yes,
-    attachAppInfo: AttachmentState.Yes,
-    attachLogMessages: AttachmentState.Yes,
   },
 };

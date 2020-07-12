@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { RecentsPage } from '../recents/recents.page';
 
 const routes: Routes = [
   {
@@ -11,15 +10,23 @@ const routes: Routes = [
     children: [
       {
         path: 'recents',
-        component: RecentsPage,
-        outlet: 'recents'
+        loadChildren: () => import('../recents/recents.module').then(m => m.RecentsPageModule),
       },
       {
-        path: 'recents/:recentsId',
-        loadChildren: () => import('../recents/recents.module').then(m => m.RecentsPageModule),
+        path: 'contacts',
+        loadChildren: () => import('../contacts/contacts.module').then(m => m.ContactsPageModule),
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule),
       },
     ],
   },
+  {
+    path: '',
+    redirectTo: 'tabs/recents',
+    pathMatch: 'full',
+  }
 ];
 
 @NgModule({

@@ -26,7 +26,6 @@ export class LoginPage implements OnInit {
   }
 
   async ngOnInit() {
-    console.log(...this.router.config);
     if (await this.userDataService.isLoggedIn()) {
       this.redirect();
     }

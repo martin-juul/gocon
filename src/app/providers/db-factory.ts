@@ -9,9 +9,9 @@ export class DbFactory {
       return CapacitorDataStorageSqlite;
     } else if (platform.is('electron')) {
       return CDSSPlugin.CapacitorDataStorageSqliteElectron;
-    } else {
-      return CDSSPlugin.CapacitorDataStorageSqlite;
     }
+
+    return CDSSPlugin.CapacitorDataStorageSqlite;
   }
 
 }

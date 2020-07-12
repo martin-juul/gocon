@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,8 +20,6 @@ import { LoggingViewerModule } from 'ionic-logging-viewer';
     LoggingViewerModule,
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     {deps: [LoggingService], multi: true, provide: APP_INITIALIZER, useFactory: configureLogging},
   ],

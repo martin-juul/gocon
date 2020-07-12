@@ -1046,24 +1046,52 @@
   resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-2.2.1.tgz#f410a31843ef10eb2c908f6a634d16439915c420"
   integrity sha512-+nGonZvaVE4pcWWFHb0Euad8pP01Dn8+tJaZwEq/TkZ0qAjZ9uAKPVqvChshBM5W0DtZF/t1uNUU7ELcGsAFIA==
 
+"@ionic-native/android-permissions@^5.27.0":
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/android-permissions/-/android-permissions-5.27.0.tgz#2e967b9b9ea0c3222b4e6b8ba1fe5eccac786767"
+  integrity sha512-q1w6XonHqVjzhFBe19/XbgDJuS4+MJsN0DK0/id0SZbg5WB5A9E9v0Tybx8lJtwW9owh/2RnDImjmYeKgAPVpw==
+  dependencies:
+    "@types/cordova" latest
+
+"@ionic-native/app-version@^5.27.0":
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/app-version/-/app-version-5.27.0.tgz#4d24f54bc121dd7f81dbeee9ff2837304a16de2b"
+  integrity sha512-KitShGHMWsXZOInzHy4y0toWrhQl7Fn7vKv4YrHcKWeTRixhxbX+f22ROkDlPqCL+3sxAshZVMdstJ0V1OeU1A==
+  dependencies:
+    "@types/cordova" latest
+
+"@ionic-native/background-mode@^5.27.0":
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/background-mode/-/background-mode-5.27.0.tgz#3aa0ad5e623fb0035f4bbed62bacb46de9c3554f"
+  integrity sha512-LT/T/fN9BqRj5LWzcjBGiyziRT7LOPLgRUYJkdBy8JejKBQVhwc0V+YzXuIFIcZzB5DNaVcvnC6m38Ryxe6AbQ==
+  dependencies:
+    "@types/cordova" latest
+
+"@ionic-native/calendar@^5.27.0":
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/calendar/-/calendar-5.27.0.tgz#3f69c6f92a1f13ded8759d2ef8c8382f12804c70"
+  integrity sha512-YFiPvslNG0W//S9jXK48NkLXtQltZljfilEJ1zZRJjPojuGpONBhcrde5IlO0uZgl2qQfEXmDNgGogpfcptGbg==
+  dependencies:
+    "@types/cordova" latest
+
+"@ionic-native/code-push@^5.27.0":
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/code-push/-/code-push-5.27.0.tgz#2ad8f836bae7890bc73acc4499cf221743ec9a96"
+  integrity sha512-ef9uElmcjX2qxYhqalrVJrYu+2PoAZTmJb93FVqI/fz8osNr/0F89Z8sSRI7aOQCShuUKkI2BxRsD8XMP/L57g==
+  dependencies:
+    "@types/cordova" latest
+
+"@ionic-native/contacts@^5.27.0":
+  version "5.27.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/contacts/-/contacts-5.27.0.tgz#41c7e57804a158c58f6788301aa72e2f54048290"
+  integrity sha512-OFSkKLoi8v8dJWo8OKq1HGY/M2yDwN3aRXb5aVttfOFTixW+rGAeUxILYDg+RXfpRWkSi6g4asGQ5wtI4UlKsg==
+  dependencies:
+    "@types/cordova" latest
+
 "@ionic-native/core@^5.0.7":
   version "5.27.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/core/-/core-5.27.0.tgz#2821f751992aaf9f4b8c5635d88d6718cba32074"
   integrity sha512-qJcZJtXaXUpwKTMzLc6tGitHJVYQCcSlx2XNQUiKyck47g98Xxo8D0zgHoRiCQvApOqw1iEKzh6xs5PLkmcXqw==
-  dependencies:
-    "@types/cordova" latest
-
-"@ionic-native/splash-screen@^5.0.0":
-  version "5.27.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-5.27.0.tgz#d2aa69808e9eff3b4bc79b95c58864a5539a535e"
-  integrity sha512-SZO5FjarVztlEBYJQsJv7NvZk+jRhElatruVpxMk4r8uuNL52Zt3TaPaGngwvI3tGHB42+l0rOsIusiBaIsSrA==
-  dependencies:
-    "@types/cordova" latest
-
-"@ionic-native/status-bar@^5.0.0":
-  version "5.27.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/status-bar/-/status-bar-5.27.0.tgz#a2e8c90537939ab51a3fb06b88ecc906b5a5905c"
-  integrity sha512-N0NIZTbi5KSA0GwTWsaJJLsve6ANQ+cy141+oUCXFPjtCYXyp1mOGcFiAE2UiI/N8SpmcLlV53zYhqIP8ish2Q==
   dependencies:
     "@types/cordova" latest
 
@@ -2810,6 +2838,46 @@ copy-webpack-plugin@6.0.3:
     schema-utils "^2.7.0"
     serialize-javascript "^4.0.0"
     webpack-sources "^1.4.3"
+
+cordova-plugin-android-permissions@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-android-permissions/-/cordova-plugin-android-permissions-1.0.2.tgz#e26556ff11a560dffa33a5915d27fe9d44b3c248"
+  integrity sha512-Eb7Cf3lk9RydSYqmUzBAEVTT/EU+opV2yvyqkgZZAB/RVfHxsla/1wzHq0PBwAFjHIrxBAGZrOpJFVKc1SxtuA==
+
+cordova-plugin-app-version@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-app-version/-/cordova-plugin-app-version-0.1.9.tgz#9db0607863337a710489302e5f50a904f1449bdb"
+  integrity sha1-nbBgeGMzenEEiTAuX1CpBPFEm9s=
+
+cordova-plugin-background-mode@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-background-mode/-/cordova-plugin-background-mode-0.7.3.tgz#066f92c99f403b3ed3d6fb91f281a0a7ccbc84ba"
+  integrity sha512-LsU1v7EgTUROaks+tcQ8TnMzVUcU/TwjDVwj2O/4e4aI2q2ldLGsiZorqKqfqvwh2HoIssmY73OwJk91hQi62w==
+
+cordova-plugin-calendar@^5.1.5:
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-calendar/-/cordova-plugin-calendar-5.1.5.tgz#a3fc334eec01731a3b0e4c05eae9db99aa3c3653"
+  integrity sha512-Qrz+Yo3ifpCsi0CWfLFrnP37Tgp3jxDmtNKILhU+f3g2EsbWwLc7VsKq8zCrxJihGr/vKpEoSFtWZGpEM3zobQ==
+
+cordova-plugin-code-push@^1.12.5:
+  version "1.12.5"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-code-push/-/cordova-plugin-code-push-1.12.5.tgz#a2727a4021ee7cee8b21e887fd325adf7cf3ae06"
+  integrity sha512-Pp8HI8z3OiZvXUans7dC2JdXYtcxnlybsDi2CRSpsN+FmC7mE5YXYAx352OhwBt8yRWMir1B6CawYVDymH5Etw==
+
+cordova-plugin-contacts@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-contacts/-/cordova-plugin-contacts-3.0.1.tgz#37aadabec93c982c04a3dcda0e4f1cfa096a84ab"
+  integrity sha1-N6ravsk8mCwEo9zaDk8c+glqhKs=
+
+cordova-plugin-device@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-device/-/cordova-plugin-device-2.0.3.tgz#c2b41b7efd0455dd097f89356d85bfdd5dadeb0f"
+  integrity sha512-Jb3V72btxf3XHpkPQsGdyc8N6tVBYn1vsxSFj43fIz9vonJDUThYPCJJHqk6PX6N4dJw6I4FjxkpfCR4LDYMlw==
+
+cordova-plugin-dialogs@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-dialogs/-/cordova-plugin-dialogs-2.0.2.tgz#ac3ce8b73bc885ff847078d5b533e7a4ed418a2f"
+  integrity sha512-FUHI6eEVeoz2VkxbF0P56QlUQLGzXcvw3i4xuXyM9gEct6Y+FA3Xzgl2pJTZcTg5wRqLWzN08kgNoHPkom15pw==
 
 cordova-res@^0.15.1:
   version "0.15.1"
@@ -4806,13 +4874,6 @@ invert-kv@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
-
-ionic-feedback-module@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/ionic-feedback-module/-/ionic-feedback-module-5.1.1.tgz#a97f939b5b561f1d4075a0d60edc402a55421c9c"
-  integrity sha512-Gy15b8X7lHiqcQ3wVaQywY/L3xZ22qmgpz6w6PvUvbp76RBAb5AB5y9mB6CqBWKIhvrw0ysGuyGQo85WpUjoFw==
-  dependencies:
-    tslib "^1.9.0"
 
 ionic-logging-service@^10.0.0:
   version "10.0.0"

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { CapacitorDataStorageSqlitePlugin } from 'capacitor-data-storage-sqlite';
 import { Platform } from '@ionic/angular';
 import { DbFactory } from './db-factory';
+import { Logger, LoggingService } from 'ionic-logging-service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,11 @@ import { DbFactory } from './db-factory';
 export class StoreService {
   store: CapacitorDataStorageSqlitePlugin;
 
-  constructor(private platform: Platform) {
+  private logger: Logger;
+
+  constructor(private platform: Platform,
+              private loggingService: LoggingService) {
+    this.logger = loggingService.getLogger('StoreService');
   }
 
   async init(): Promise<void> {
@@ -30,7 +35,9 @@ export class StoreService {
     const encrypted = _encrypted ? _encrypted : false;
     const mode: string = _mode ? _mode : 'no-encryption';
     const r = await this.store.openStore({database, table, encrypted, mode});
-    console.log('[StoreService]: openStore:', r);
+
+    this.logger.debug('openStore', {_dbName, _table, _encrypted, _mode}, r)
+
     return r.result;
   }
 
@@ -62,9 +69,11 @@ export class StoreService {
    * Get the Value for a given Key
    * @param key string
    */
-  async getItem(key: string): Promise<string> {
-    const {value, result, message} = await this.store.get({key});
-    this.checkResult(result, message);
+  async getItem(key: string): Promise<string | null> {
+    const {value, result} = await this.store.get({key});
+    if (!result) {
+      return null;
+    }
 
     return value;
   }
