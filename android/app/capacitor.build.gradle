@@ -12,7 +12,7 @@ dependencies {
     implementation project(':capacitor-data-storage-sqlite')
 
 }
-
+apply from: "../../node_modules/cordova-plugin-code-push/src/android/build-extras.gradle"
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()
