@@ -16,6 +16,12 @@ export enum Logger {
 }
 
 export interface Environment {
+  appName: string;
   production: boolean;
   logging: LoggingServiceConfiguration;
+  baseUrls: {
+    api: string;
+    manager: string;
+    updateService: string;
+  }
 }

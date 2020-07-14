@@ -1,4 +1,3 @@
-import { Environment, Logger, LogLevel } from './environment.model';
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -7,13 +6,24 @@ import { Environment, Logger, LogLevel } from './environment.model';
  * on performance if an error is thrown.
  */
 import 'zone.js/dist/zone-error'; // Included with Angular CLI.
+import { Environment, Logger, LogLevel } from './environment.model';
 
 export const environment: Environment = {
+  appName: 'GoCon',
   production: false,
+  baseUrls: {
+    api: 'https://api.everconnect.dk',
+    manager: 'https://manager.everconnect.dk',
+    updateService: 'https://download.evercall.dk',
+  },
   logging: {
     logLevels: [
       {
         loggerName: Logger.ROOT,
+        logLevel: LogLevel.DEBUG,
+      },
+      {
+        loggerName: 'GoCon.LoginPage',
         logLevel: LogLevel.DEBUG,
       },
       {

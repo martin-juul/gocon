@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
-import com.jeep.plugin.capacitor.CapacitorDataStorageSqlite;
+import com.jeep.plugin.capacitor.CapacitorSQLite;
 
 import java.util.ArrayList;
 
@@ -13,9 +13,8 @@ public class MainActivity extends BridgeActivity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    // Initializes the Bridge
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-      add(CapacitorDataStorageSqlite.class);
+      add(CapacitorSQLite.class);
     }});
   }
 }

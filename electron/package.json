@@ -23,12 +23,8 @@
     "electron-rebuild": "^1.11.0",
     "typescript": "~3.9.5"
   },
-  "keywords": [
-    "capacitor",
-    "electron"
-  ],
   "author": "Martin Juul <code@juul.xyz>",
-  "license": "proprietary",
+  "license": "UNLICENSED",
   "build": {
     "appId": "app.martin-juul.gocon",
     "productName": "GoCon",

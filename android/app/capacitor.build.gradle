@@ -9,10 +9,10 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
-    implementation project(':capacitor-data-storage-sqlite')
+    implementation project(':capacitor-sqlite')
 
 }
-apply from: "../../node_modules/cordova-plugin-code-push/src/android/build-extras.gradle"
+
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()

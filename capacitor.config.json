@@ -9,5 +9,9 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "overrideUserAgent": "GoCon 0.0.1 (mjc)",
+  "ios": {
+    "allowsLinkPreview": false
+  }
 }

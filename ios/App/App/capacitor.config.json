@@ -9,5 +9,13 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "overrideUserAgent": "GoCon 0.0.1 (mjc)",
+  "ios": {
+    "allowsLinkPreview": false
+  },
+  "server": {
+    "url": "http://192.168.8.100:8100",
+    "cleartext": true
+  }
 }

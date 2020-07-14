@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { CapacitorDataStorageSqlitePlugin } from 'capacitor-data-storage-sqlite';
 import { Platform } from '@ionic/angular';
-import { DbFactory } from './db-factory';
 import { Logger, LoggingService } from 'ionic-logging-service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
-  store: CapacitorDataStorageSqlitePlugin;
+  store: any;
 
   private logger: Logger;
 
@@ -19,7 +17,6 @@ export class StoreService {
   }
 
   async init(): Promise<void> {
-    this.store = DbFactory.make(this.platform);
   }
 
   /**

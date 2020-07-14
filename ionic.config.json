@@ -1,7 +1,8 @@
 {
   "name": "GoCon",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular",
   "id": "cdb95bbf"
