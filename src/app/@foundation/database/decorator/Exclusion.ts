@@ -1,5 +1,5 @@
-import {getMetadataArgsStorage} from "../";
-import {ExclusionMetadataArgs} from "../metadata-args/ExclusionMetadataArgs";
+import { getMetadataArgsStorage } from '../';
+import { ExclusionMetadataArgs } from '../metadata-args';
 
 /**
  * Creates a database exclusion.
@@ -22,18 +22,18 @@ export function Exclusion(name: string, expression: string): Function;
  */
 export function Exclusion(nameOrExpression: string, maybeExpression?: string): Function {
 
-    const name = maybeExpression ? nameOrExpression : undefined;
-    const expression = maybeExpression ? maybeExpression : nameOrExpression;
+  const name = maybeExpression ? nameOrExpression : undefined;
+  const expression = maybeExpression ? maybeExpression : nameOrExpression;
 
-    if (!expression)
-        throw new Error(`Exclusion expression is required`);
+  if (!expression)
+    throw new Error(`Exclusion expression is required`);
 
-    return function (clsOrObject: Function|Object, propertyName?: string) {
+  return function (clsOrObject: Function | Object, propertyName?: string) {
 
-        getMetadataArgsStorage().exclusions.push({
-            target: propertyName ? clsOrObject.constructor : clsOrObject as Function,
-            name: name,
-            expression: expression
-        } as ExclusionMetadataArgs);
-    };
+    getMetadataArgsStorage().exclusions.push({
+      target: propertyName ? clsOrObject.constructor : clsOrObject as Function,
+      name: name,
+      expression: expression,
+    } as ExclusionMetadataArgs);
+  };
 }

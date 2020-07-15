@@ -1,14 +1,12 @@
-import {importClassesFromDirectories} from "../util/DirectoryExportedClassesLoader";
-import {OrmUtils} from "../util/OrmUtils";
-import {getFromContainer} from "../container";
-import {MigrationInterface} from "../migration/MigrationInterface";
-import {getMetadataArgsStorage} from "../index";
-import {EntityMetadataBuilder} from "../metadata-builder/EntityMetadataBuilder";
-import {EntitySchemaTransformer} from "../entity-schema/EntitySchemaTransformer";
-import {Connection} from "./connection";
-import {EntitySchema} from "../entity-schema/EntitySchema";
-import {EntityMetadata} from "../metadata/EntityMetadata";
-import {EntitySubscriberInterface} from "../subscriber/EntitySubscriberInterface";
+import { importClassesFromDirectories, OrmUtils } from '../util';
+import { getFromContainer } from '../container';
+import { MigrationInterface } from '../migration';
+import { getMetadataArgsStorage } from '../index';
+import { EntityMetadataBuilder } from '../metadata-builder';
+import { EntitySchema, EntitySchemaTransformer } from '../entity-schema';
+import { Connection } from './connection';
+import { EntityMetadata } from '../metadata';
+import { EntitySubscriberInterface } from '../subscriber';
 
 /**
  * Builds migration instances, subscriber instances and entity metadatas for the given classes.
@@ -50,10 +48,10 @@ export class ConnectionMetadataBuilder {
      * Builds entity metadatas for the given classes or directories.
      */
     buildEntityMetadatas(entities: (Function|EntitySchema<any>|string)[]): EntityMetadata[] {
-        // todo: instead we need to merge multiple metadata args storages
+        // todo: instead we need to merge multiple metadata args stores
 
         const [entityClassesOrSchemas, entityDirectories] = OrmUtils.splitClassesAndStrings(entities || []);
-        const entityClasses: Function[] = entityClassesOrSchemas.filter(entityClass => (entityClass instanceof EntitySchema) === false) as any;
+        const entityClasses: Function[] = entityClassesOrSchemas.filter(entityClass => !(entityClass instanceof EntitySchema)) as any;
         const entitySchemas: EntitySchema<any>[] = entityClassesOrSchemas.filter(entityClass => entityClass instanceof EntitySchema) as any;
 
         const allEntityClasses = [...entityClasses, ...importClassesFromDirectories(this.connection.logger, entityDirectories)];

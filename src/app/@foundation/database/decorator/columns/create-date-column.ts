@@ -1,5 +1,5 @@
-import {ColumnOptions, getMetadataArgsStorage} from "../../";
-import {ColumnMetadataArgs} from "../../metadata-args/ColumnMetadataArgs";
+import { ColumnOptions, getMetadataArgsStorage } from '../../';
+import { ColumnMetadataArgs } from '../../metadata-args';
 
 /**
  * This column will store a creation date of the inserted object.
@@ -7,12 +7,12 @@ import {ColumnMetadataArgs} from "../../metadata-args/ColumnMetadataArgs";
  * at the first time when you create an object, the value is inserted into the table, and is never touched again.
  */
 export function CreateDateColumn(options?: ColumnOptions): Function {
-    return function (object: Object, propertyName: string) {
-        getMetadataArgsStorage().columns.push({
-            target: object.constructor,
-            propertyName: propertyName,
-            mode: "createDate",
-            options: options || {}
-        } as ColumnMetadataArgs);
-    };
+  return function (object: Object, propertyName: string) {
+    getMetadataArgsStorage().columns.push({
+      target: object.constructor,
+      propertyName: propertyName,
+      mode: 'createDate',
+      options: options || {},
+    } as ColumnMetadataArgs);
+  };
 }

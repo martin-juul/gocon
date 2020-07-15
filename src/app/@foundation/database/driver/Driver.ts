@@ -1,13 +1,10 @@
-import {QueryRunner} from "../query-runner/QueryRunner";
-import {ColumnMetadata} from "../metadata/ColumnMetadata";
-import {ObjectLiteral} from "../common/object-literal";
-import {ColumnType} from "./types/ColumnTypes";
-import {MappedColumnTypes} from "./types/MappedColumnTypes";
-import {SchemaBuilder} from "../schema-builder/SchemaBuilder";
-import {DataTypeDefaults} from "./types/DataTypeDefaults";
-import {BaseConnectionOptions} from "../connection/base-connection-options";
-import {TableColumn} from "../schema-builder/table/TableColumn";
-import {EntityMetadata} from "../metadata/EntityMetadata";
+import { QueryRunner } from '../query-runner';
+import { ColumnMetadata, EntityMetadata } from '../metadata';
+import { ObjectLiteral } from '../common';
+import { ColumnType, DataTypeDefaults, MappedColumnTypes } from './types';
+import { SchemaBuilder } from '../schema-builder';
+import { BaseConnectionOptions } from '../connection';
+import { TableColumn } from '../schema-builder/table';
 
 /**
  * Driver organizes TypeORM communication with specific database management system.

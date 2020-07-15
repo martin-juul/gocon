@@ -1,6 +1,6 @@
-import {ConnectionOptions} from "../connection-options";
-import {PlatformTools} from "../../platform/PlatformTools";
-import {OrmUtils} from "../../util/OrmUtils";
+import { ConnectionOptions } from '../connection-options';
+import { PlatformTools } from '../../platform';
+import { OrmUtils } from '../../util';
 
 /**
  * Reads connection options from environment variables.
@@ -19,14 +19,14 @@ export class ConnectionOptionsEnvReader {
     read(): ConnectionOptions {
         return {
             type: PlatformTools.getEnvVariable("TYPEORM_CONNECTION") || (PlatformTools.getEnvVariable("TYPEORM_URL") ? PlatformTools.getEnvVariable("TYPEORM_URL").split("://")[0] : undefined),
-            url: PlatformTools.getEnvVariable("TYPEORM_URL"),
-            host: PlatformTools.getEnvVariable("TYPEORM_HOST"),
-            port: PlatformTools.getEnvVariable("TYPEORM_PORT"),
-            username: PlatformTools.getEnvVariable("TYPEORM_USERNAME"),
-            password: PlatformTools.getEnvVariable("TYPEORM_PASSWORD"),
+            // url: PlatformTools.getEnvVariable("TYPEORM_URL"),
+            // host: PlatformTools.getEnvVariable("TYPEORM_HOST"),
+            // port: PlatformTools.getEnvVariable("TYPEORM_PORT"),
+            // username: PlatformTools.getEnvVariable("TYPEORM_USERNAME"),
+            // password: PlatformTools.getEnvVariable("TYPEORM_PASSWORD"),
             database: PlatformTools.getEnvVariable("TYPEORM_DATABASE"),
-            sid: PlatformTools.getEnvVariable("TYPEORM_SID"),
-            schema: PlatformTools.getEnvVariable("TYPEORM_SCHEMA"),
+            // sid: PlatformTools.getEnvVariable("TYPEORM_SID"),
+            // schema: PlatformTools.getEnvVariable("TYPEORM_SCHEMA"),
             extra: PlatformTools.getEnvVariable("TYPEORM_DRIVER_EXTRA") ? JSON.parse(PlatformTools.getEnvVariable("TYPEORM_DRIVER_EXTRA")) : undefined,
             synchronize: OrmUtils.toBoolean(PlatformTools.getEnvVariable("TYPEORM_SYNCHRONIZE")),
             dropSchema: OrmUtils.toBoolean(PlatformTools.getEnvVariable("TYPEORM_DROP_SCHEMA")),
@@ -41,7 +41,6 @@ export class ConnectionOptionsEnvReader {
             maxQueryExecutionTime: PlatformTools.getEnvVariable("TYPEORM_MAX_QUERY_EXECUTION_TIME"),
             debug: PlatformTools.getEnvVariable("TYPEORM_DEBUG"),
             cache: this.transformCaching(),
-            uuidExtension: PlatformTools.getEnvVariable("TYPEORM_UUID_EXTENSION")
         };
     }
 

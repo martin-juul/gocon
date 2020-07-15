@@ -1,5 +1,5 @@
-import {getMetadataArgsStorage} from "../";
-import {CheckMetadataArgs} from "../metadata-args/CheckMetadataArgs";
+import { getMetadataArgsStorage } from '../';
+import { CheckMetadataArgs } from '../metadata-args';
 
 /**
  * Creates a database check.
@@ -22,18 +22,18 @@ export function Check(name: string, expression: string): Function;
  */
 export function Check(nameOrExpression: string, maybeExpression?: string): Function {
 
-    const name = maybeExpression ? nameOrExpression : undefined;
-    const expression = maybeExpression ? maybeExpression : nameOrExpression;
+  const name = maybeExpression ? nameOrExpression : undefined;
+  const expression = maybeExpression ? maybeExpression : nameOrExpression;
 
-    if (!expression)
-        throw new Error(`Check expression is required`);
+  if (!expression)
+    throw new Error(`Check expression is required`);
 
-    return function (clsOrObject: Function|Object, propertyName?: string) {
+  return function (clsOrObject: Function | Object, propertyName?: string) {
 
-        getMetadataArgsStorage().checks.push({
-            target: propertyName ? clsOrObject.constructor : clsOrObject as Function,
-            name: name,
-            expression: expression
-        } as CheckMetadataArgs);
-    };
+    getMetadataArgsStorage().checks.push({
+      target: propertyName ? clsOrObject.constructor : clsOrObject as Function,
+      name: name,
+      expression: expression,
+    } as CheckMetadataArgs);
+  };
 }

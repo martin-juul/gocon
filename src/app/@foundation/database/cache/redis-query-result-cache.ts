@@ -1,8 +1,8 @@
 import {QueryResultCache} from "./query-result-cache";
 import {QueryResultCacheOptions} from "./query-result-cache-options";
-import {PlatformTools} from "../platform/PlatformTools";
+import {PlatformTools} from "../platform";
 import {Connection} from "../connection/connection";
-import {QueryRunner} from "../query-runner/QueryRunner";
+import {QueryRunner} from "../query-runner/query-runner";
 
 /**
  * Caches query result into Redis database.

@@ -1,166 +1,86 @@
 /*!
  */
-import "reflect-metadata";
-import {ConnectionManager} from "./connection/connection-manager";
-import {Connection} from "./connection/connection";
-import {MetadataArgsStorage} from "./metadata-args/MetadataArgsStorage";
-import {ConnectionOptions} from "./connection/connection-options";
-import {getFromContainer} from "./container";
-import {QbjectType} from "./common/qbject-type";
-import {Repository} from "./repository/Repository";
-import {EntityManager} from "./entity-manager/EntityManager";
-import {PlatformTools} from "./platform/PlatformTools";
-import {TreeRepository} from "./repository/TreeRepository";
-import {MongoRepository} from "./repository/MongoRepository";
-import {ConnectionOptionsReader} from "./connection/connection-options-reader";
-import {PromiseUtils} from "./util/PromiseUtils";
-import {MongoEntityManager} from "./entity-manager/MongoEntityManager";
-import {SqljsEntityManager} from "./entity-manager/SqljsEntityManager";
-import {SelectQueryBuilder} from "./query-builder/SelectQueryBuilder";
-import {EntitySchema} from "./entity-schema/EntitySchema";
+import 'reflect-metadata';
+import { ConnectionManager } from './connection/connection-manager';
+import { Connection } from './connection/connection';
+import { MetadataArgsStorage } from './metadata-args';
+import { ConnectionOptions } from './connection/connection-options';
+import { getFromContainer } from './container';
+import { QbjectType } from './common/qbject-type';
+import { Repository } from './repository/Repository';
+import { EntityManager, SqljsEntityManager } from './entity-manager';
+import { PlatformTools } from './platform';
+import { TreeRepository } from './repository';
+import { ConnectionOptionsReader } from './connection/connection-options-reader';
+import { PromiseUtils } from './util';
+import { SelectQueryBuilder } from './query-builder';
+import { EntitySchema } from './entity-schema';
 
 // -------------------------------------------------------------------------
 // Commonly Used exports
 // -------------------------------------------------------------------------
 
-export * from "./container";
-export * from "./common/qbject-type";
-export * from "./common/object-literal";
-export * from "./common/deep-partial";
-export * from "./error/QueryFailedError";
-export * from "./decorator/columns/column";
-export * from "./decorator/columns/create-date-column";
-export * from "./decorator/columns/delete-date-column";
-export * from "./decorator/columns/primary-generated-column";
-export * from "./decorator/columns/primary-column";
-export * from "./decorator/columns/update-date-column";
-export * from "./decorator/columns/version-column";
-export * from "./decorator/columns/ViewColumn";
-export * from "./decorator/columns/object-id-column";
-export * from "./decorator/listeners/AfterInsert";
-export * from "./decorator/listeners/AfterLoad";
-export * from "./decorator/listeners/AfterRemove";
-export * from "./decorator/listeners/AfterUpdate";
-export * from "./decorator/listeners/BeforeInsert";
-export * from "./decorator/listeners/BeforeRemove";
-export * from "./decorator/listeners/BeforeUpdate";
-export * from "./decorator/listeners/EventSubscriber";
-export * from "./decorator/options/ColumnOptions";
-export * from "./decorator/options/IndexOptions";
-export * from "./decorator/options/JoinColumnOptions";
-export * from "./decorator/options/JoinTableOptions";
-export * from "./decorator/options/RelationOptions";
-export * from "./decorator/options/EntityOptions";
-export * from "./decorator/options/ValueTransformer";
-export * from "./decorator/relations/JoinColumn";
-export * from "./decorator/relations/JoinTable";
-export * from "./decorator/relations/ManyToMany";
-export * from "./decorator/relations/ManyToOne";
-export * from "./decorator/relations/OneToMany";
-export * from "./decorator/relations/OneToOne";
-export * from "./decorator/relations/RelationCount";
-export * from "./decorator/relations/RelationId";
-export * from "./decorator/entity/Entity";
-export * from "./decorator/entity/ChildEntity";
-export * from "./decorator/entity/TableInheritance";
-export * from "./decorator/entity-view/ViewEntity";
-export * from "./decorator/transaction/Transaction";
-export * from "./decorator/transaction/TransactionManager";
-export * from "./decorator/transaction/TransactionRepository";
-export * from "./decorator/tree/TreeLevelColumn";
-export * from "./decorator/tree/TreeParent";
-export * from "./decorator/tree/TreeChildren";
-export * from "./decorator/tree/Tree";
-export * from "./decorator/Index";
-export * from "./decorator/Unique";
-export * from "./decorator/Check";
-export * from "./decorator/Exclusion";
-export * from "./decorator/Generated";
-export * from "./decorator/EntityRepository";
-export * from "./find-options/operator/Any";
-export * from "./find-options/operator/Between";
-export * from "./find-options/operator/Equal";
-export * from "./find-options/operator/In";
-export * from "./find-options/operator/IsNull";
-export * from "./find-options/operator/LessThan";
-export * from "./find-options/operator/LessThanOrEqual";
-export * from "./find-options/operator/Like";
-export * from "./find-options/operator/MoreThan";
-export * from "./find-options/operator/MoreThanOrEqual";
-export * from "./find-options/operator/Not";
-export * from "./find-options/operator/Raw";
-export * from "./find-options/FindConditions";
-export * from "./find-options/FindManyOptions";
-export * from "./find-options/FindOneOptions";
-export * from "./find-options/FindOperator";
-export * from "./find-options/FindOperatorType";
-export * from "./find-options/JoinOptions";
-export * from "./find-options/OrderByCondition";
-export * from "./find-options/FindOptionsUtils";
-export * from "./logger/Logger";
-export * from "./logger/AdvancedConsoleLogger";
-export * from "./logger/SimpleConsoleLogger";
-export * from "./logger/FileLogger";
-export * from "./metadata/EntityMetadata";
-export * from "./entity-manager/EntityManager";
-export * from "./repository/AbstractRepository";
-export * from "./repository/Repository";
-export * from "./repository/BaseEntity";
-export * from "./repository/TreeRepository";
-export * from "./repository/MongoRepository";
-export * from "./repository/RemoveOptions";
-export * from "./repository/SaveOptions";
-export * from "./schema-builder/table/TableCheck";
-export * from "./schema-builder/table/TableColumn";
-export * from "./schema-builder/table/TableExclusion";
-export * from "./schema-builder/table/TableForeignKey";
-export * from "./schema-builder/table/TableIndex";
-export * from "./schema-builder/table/TableUnique";
-export * from "./schema-builder/table/Table";
-export * from "./driver/mongodb/typings";
-export * from "./driver/types/DatabaseType";
-export * from "./driver/sqlserver/MssqlParameter";
+export * from './container';
+export * from './common/qbject-type';
+export * from './common/object-literal';
+export * from './common/deep-partial';
+export * from './error';
+export * from './decorator';
+export * from './decorator/columns';
+export * from './decorator/listeners';
+export * from './decorator/options';
+export * from './decorator/relations';
+export * from './decorator/entity';
+export * from './decorator/transaction';
+export * from './decorator/tree';
+export * from './find-options';
+export * from './logger/Logger';
+export * from './logger/advanced-console-logger';
+export * from './logger/simple-console-logger';
+export * from './logger/file-logger';
+export * from './metadata';
+export * from './repository';
+export * from './schema-builder/table';
+export * from './driver/types';
 
-export {ConnectionOptionsReader} from "./connection/connection-options-reader";
-export {Connection} from "./connection/connection";
-export {ConnectionManager} from "./connection/connection-manager";
-export {ConnectionOptions} from "./connection/connection-options";
-export {Driver} from "./driver/Driver";
-export {QueryBuilder} from "./query-builder/QueryBuilder";
-export {SelectQueryBuilder} from "./query-builder/SelectQueryBuilder";
-export {DeleteQueryBuilder} from "./query-builder/DeleteQueryBuilder";
-export {InsertQueryBuilder} from "./query-builder/InsertQueryBuilder";
-export {UpdateQueryBuilder} from "./query-builder/UpdateQueryBuilder";
-export {RelationQueryBuilder} from "./query-builder/RelationQueryBuilder";
-export {Brackets} from "./query-builder/Brackets";
-export {WhereExpression} from "./query-builder/WhereExpression";
-export {InsertResult} from "./query-builder/result/InsertResult";
-export {UpdateResult} from "./query-builder/result/UpdateResult";
-export {DeleteResult} from "./query-builder/result/DeleteResult";
-export {QueryRunner} from "./query-runner/QueryRunner";
-export {EntityManager} from "./entity-manager/EntityManager";
-export {MongoEntityManager} from "./entity-manager/MongoEntityManager";
-export {Migration} from "./migration/Migration";
-export {MigrationExecutor} from "./migration/MigrationExecutor";
-export {MigrationInterface} from "./migration/MigrationInterface";
-export {DefaultNamingStrategy} from "./naming-strategy/DefaultNamingStrategy";
-export {NamingStrategyInterface} from "./naming-strategy/NamingStrategyInterface";
-export {Repository} from "./repository/Repository";
-export {TreeRepository} from "./repository/TreeRepository";
-export {MongoRepository} from "./repository/MongoRepository";
-export {FindOneOptions} from "./find-options/FindOneOptions";
-export {FindManyOptions} from "./find-options/FindManyOptions";
-export {InsertEvent} from "./subscriber/event/InsertEvent";
-export {UpdateEvent} from "./subscriber/event/UpdateEvent";
-export {RemoveEvent} from "./subscriber/event/RemoveEvent";
-export {EntitySubscriberInterface} from "./subscriber/EntitySubscriberInterface";
-export {BaseEntity} from "./repository/BaseEntity";
-export {EntitySchema} from "./entity-schema/EntitySchema";
-export {EntitySchemaColumnOptions} from "./entity-schema/EntitySchemaColumnOptions";
-export {EntitySchemaIndexOptions} from "./entity-schema/EntitySchemaIndexOptions";
-export {EntitySchemaRelationOptions} from "./entity-schema/EntitySchemaRelationOptions";
-export {ColumnType} from "./driver/types/ColumnTypes";
-export {PromiseUtils} from "./util/PromiseUtils";
+export { ConnectionOptionsReader } from './connection/connection-options-reader';
+export { Connection } from './connection/connection';
+export { ConnectionManager } from './connection/connection-manager';
+export { ConnectionOptions } from './connection/connection-options';
+export { Driver } from './driver/Driver';
+export { QueryBuilder } from './query-builder';
+export { SelectQueryBuilder } from './query-builder';
+export { DeleteQueryBuilder } from './query-builder';
+export { InsertQueryBuilder } from './query-builder';
+export { UpdateQueryBuilder } from './query-builder';
+export { RelationQueryBuilder } from './query-builder';
+export { Brackets } from './query-builder/brackets';
+export { WhereExpression } from './query-builder';
+export { InsertResult } from './query-builder/result';
+export { UpdateResult } from './query-builder/result';
+export { DeleteResult } from './query-builder/result';
+export { QueryRunner } from './query-runner';
+export { EntityManager } from './entity-manager';
+export { Migration } from './migration';
+export { MigrationExecutor } from './migration';
+export { MigrationInterface } from './migration';
+export { DefaultNamingStrategy } from './naming-strategy';
+export { NamingStrategyInterface } from './naming-strategy';
+export { Repository } from './repository/Repository';
+export { TreeRepository } from './repository';
+export { FindOneOptions } from './find-options';
+export { FindManyOptions } from './find-options';
+export { InsertEvent } from './subscriber/event';
+export { UpdateEvent } from './subscriber/event';
+export { RemoveEvent } from './subscriber/event';
+export { EntitySubscriberInterface } from './subscriber';
+export { BaseEntity } from './repository';
+export { EntitySchema } from './entity-schema';
+export { EntitySchemaColumnOptions } from './entity-schema';
+export { EntitySchemaIndexOptions } from './entity-schema';
+export { EntitySchemaRelationOptions } from './entity-schema';
+export { ColumnType } from './driver/types';
+export { PromiseUtils } from './util';
 
 // -------------------------------------------------------------------------
 // Deprecated
@@ -174,33 +94,33 @@ export {PromiseUtils} from "./util/PromiseUtils";
  * Gets metadata args storage.
  */
 export function getMetadataArgsStorage(): MetadataArgsStorage {
-    // we should store metadata storage in a global variable otherwise it brings too much problems
-    // one of the problem is that if any entity (or any other) will be imported before consumer will call
-    // useContainer method with his own container implementation, that entity will be registered in the
-    // old old container (default one post probably) and consumer will his entity.
-    // calling useContainer before he imports any entity (or any other) is not always convenient.
-    // another reason is that when we run migrations typeorm is being called from a global package
-    // and it may load entities which register decorators in typeorm of local package
-    // this leads to impossibility of usage of entities in migrations and cli related operations
-    const globalScope = PlatformTools.getGlobalVariable();
-    if (!globalScope.typeormMetadataArgsStorage)
-        globalScope.typeormMetadataArgsStorage = new MetadataArgsStorage();
+  // we should store metadata storage in a global variable otherwise it brings too much problems
+  // one of the problem is that if any entity (or any other) will be imported before consumer will call
+  // useContainer method with his own container implementation, that entity will be registered in the
+  // old old container (default one post probably) and consumer will his entity.
+  // calling useContainer before he imports any entity (or any other) is not always convenient.
+  // another reason is that when we run migrations typeorm is being called from a global package
+  // and it may load entities which register decorators in typeorm of local package
+  // this leads to impossibility of usage of entities in migrations and cli related operations
+  const globalScope = PlatformTools.getGlobalVariable();
+  if (!globalScope.typeormMetadataArgsStorage)
+    globalScope.typeormMetadataArgsStorage = new MetadataArgsStorage();
 
-    return globalScope.typeormMetadataArgsStorage;
+  return globalScope.typeormMetadataArgsStorage;
 }
 
 /**
  * Reads connection options stored in ormconfig configuration file.
  */
-export async function getConnectionOptions(connectionName: string = "default"): Promise<ConnectionOptions> {
-    return new ConnectionOptionsReader().get(connectionName);
+export async function getConnectionOptions(connectionName: string = 'default'): Promise<ConnectionOptions> {
+  return new ConnectionOptionsReader().get(connectionName);
 }
 
 /**
  * Gets a ConnectionManager which creates connections.
  */
 export function getConnectionManager(): ConnectionManager {
-    return getFromContainer(ConnectionManager);
+  return getFromContainer(ConnectionManager);
 }
 
 /**
@@ -227,9 +147,9 @@ export async function createConnection(options: ConnectionOptions): Promise<Conn
  * Only one connection from ormconfig will be created (name "default" or connection without name).
  */
 export async function createConnection(optionsOrName?: any): Promise<Connection> {
-    const connectionName = typeof optionsOrName === "string" ? optionsOrName : "default";
-    const options = optionsOrName instanceof Object ? optionsOrName : await getConnectionOptions(connectionName);
-    return getConnectionManager().create(options).connect();
+  const connectionName = typeof optionsOrName === 'string' ? optionsOrName : 'default';
+  const options = optionsOrName instanceof Object ? optionsOrName : await getConnectionOptions(connectionName);
+  return getConnectionManager().create(options).connect();
 }
 
 /**
@@ -240,34 +160,26 @@ export async function createConnection(optionsOrName?: any): Promise<Connection>
  * All connections from the ormconfig will be created.
  */
 export async function createConnections(options?: ConnectionOptions[]): Promise<Connection[]> {
-    if (!options)
-        options = await new ConnectionOptionsReader().all();
-    const connections = options.map(options => getConnectionManager().create(options));
-    return PromiseUtils.runInSequence(connections, connection => connection.connect());
+  if (!options)
+    options = await new ConnectionOptionsReader().all();
+  const connections = options.map(options => getConnectionManager().create(options));
+  return PromiseUtils.runInSequence(connections, connection => connection.connect());
 }
 
 /**
  * Gets connection from the connection manager.
  * If connection name wasn't specified, then "default" connection will be retrieved.
  */
-export function getConnection(connectionName: string = "default"): Connection {
-    return getConnectionManager().get(connectionName);
+export function getConnection(connectionName: string = 'default'): Connection {
+  return getConnectionManager().get(connectionName);
 }
 
 /**
  * Gets entity manager from the connection.
  * If connection name wasn't specified, then "default" connection will be retrieved.
  */
-export function getManager(connectionName: string = "default"): EntityManager {
-    return getConnectionManager().get(connectionName).manager;
-}
-
-/**
- * Gets MongoDB entity manager from the connection.
- * If connection name wasn't specified, then "default" connection will be retrieved.
- */
-export function getMongoManager(connectionName: string = "default"): MongoEntityManager {
-    return getConnectionManager().get(connectionName).manager as MongoEntityManager;
+export function getManager(connectionName: string = 'default'): EntityManager {
+  return getConnectionManager().get(connectionName).manager;
 }
 
 /**
@@ -275,45 +187,38 @@ export function getMongoManager(connectionName: string = "default"): MongoEntity
  * "default" connection is used, when no name is specified.
  * Only works when Sqljs driver is used.
  */
-export function getSqljsManager(connectionName: string = "default"): SqljsEntityManager {
-    return getConnectionManager().get(connectionName).manager as SqljsEntityManager;
+export function getSqljsManager(connectionName: string = 'default'): SqljsEntityManager {
+  return getConnectionManager().get(connectionName).manager as SqljsEntityManager;
 }
 
 /**
  * Gets repository for the given entity class.
  */
-export function getRepository<Entity>(entityClass: QbjectType<Entity>|EntitySchema<Entity>|string, connectionName: string = "default"): Repository<Entity> {
-    return getConnectionManager().get(connectionName).getRepository<Entity>(entityClass);
+export function getRepository<Entity>(entityClass: QbjectType<Entity> | EntitySchema<Entity> | string, connectionName: string = 'default'): Repository<Entity> {
+  return getConnectionManager().get(connectionName).getRepository<Entity>(entityClass);
 }
 
 /**
  * Gets tree repository for the given entity class.
  */
-export function getTreeRepository<Entity>(entityClass: QbjectType<Entity>|string, connectionName: string = "default"): TreeRepository<Entity> {
-    return getConnectionManager().get(connectionName).getTreeRepository<Entity>(entityClass);
+export function getTreeRepository<Entity>(entityClass: QbjectType<Entity> | string, connectionName: string = 'default'): TreeRepository<Entity> {
+  return getConnectionManager().get(connectionName).getTreeRepository<Entity>(entityClass);
 }
 
 /**
  * Gets tree repository for the given entity class.
  */
-export function getCustomRepository<T>(customRepository: QbjectType<T>, connectionName: string = "default"): T {
-    return getConnectionManager().get(connectionName).getCustomRepository(customRepository);
-}
-
-/**
- * Gets mongodb repository for the given entity class or name.
- */
-export function getMongoRepository<Entity>(entityClass: QbjectType<Entity>|string, connectionName: string = "default"): MongoRepository<Entity> {
-    return getConnectionManager().get(connectionName).getMongoRepository<Entity>(entityClass);
+export function getCustomRepository<T>(customRepository: QbjectType<T>, connectionName: string = 'default'): T {
+  return getConnectionManager().get(connectionName).getCustomRepository(customRepository);
 }
 
 /**
  * Creates a new query builder.
  */
-export function createQueryBuilder<Entity>(entityClass?: QbjectType<Entity>|string, alias?: string, connectionName: string = "default"): SelectQueryBuilder<Entity> {
-    if (entityClass) {
-        return getRepository(entityClass, connectionName).createQueryBuilder(alias);
-    }
+export function createQueryBuilder<Entity>(entityClass?: QbjectType<Entity> | string, alias?: string, connectionName: string = 'default'): SelectQueryBuilder<Entity> {
+  if (entityClass) {
+    return getRepository(entityClass, connectionName).createQueryBuilder(alias);
+  }
 
-    return getConnection(connectionName).createQueryBuilder();
+  return getConnection(connectionName).createQueryBuilder();
 }

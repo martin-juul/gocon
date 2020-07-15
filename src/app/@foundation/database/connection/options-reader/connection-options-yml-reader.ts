@@ -1,5 +1,5 @@
-import {PlatformTools} from "../../platform/PlatformTools";
-import {ConnectionOptions} from "../connection-options";
+import { PlatformTools } from '../../platform';
+import { ConnectionOptions } from '../connection-options';
 
 /**
  * Reads connection options defined in the yml file.

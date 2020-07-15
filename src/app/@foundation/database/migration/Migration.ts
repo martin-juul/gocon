@@ -1,44 +1,44 @@
-import {MigrationInterface} from "./MigrationInterface";
+import { MigrationInterface } from './migration-interface';
 
 /**
  * Represents entity of the migration in the database.
  */
 export class Migration {
 
-    // -------------------------------------------------------------------------
-    // Public Properties
-    // -------------------------------------------------------------------------
+  // -------------------------------------------------------------------------
+  // Public Properties
+  // -------------------------------------------------------------------------
 
-    /**
-     * Migration id.
-     * Indicates order of the executed migrations.
-     */
-    id: number|undefined;
+  /**
+   * Migration id.
+   * Indicates order of the executed migrations.
+   */
+  id: number | undefined;
 
-    /**
-     * Timestamp of the migration.
-     */
-    timestamp: number;
+  /**
+   * Timestamp of the migration.
+   */
+  timestamp: number;
 
-    /**
-     * Name of the migration (class name).
-     */
-    name: string;
+  /**
+   * Name of the migration (class name).
+   */
+  name: string;
 
-    /**
-     * Migration instance that needs to be run.
-     */
-    instance?: MigrationInterface;
+  /**
+   * Migration instance that needs to be run.
+   */
+  instance?: MigrationInterface;
 
-    // -------------------------------------------------------------------------
-    // Constructor
-    // -------------------------------------------------------------------------
+  // -------------------------------------------------------------------------
+  // Constructor
+  // -------------------------------------------------------------------------
 
-    constructor(id: number|undefined, timestamp: number, name: string, instance?: MigrationInterface) {
-        this.id = id;
-        this.timestamp = timestamp;
-        this.name = name;
-        this.instance = instance;
-    }
+  constructor(id: number | undefined, timestamp: number, name: string, instance?: MigrationInterface) {
+    this.id = id;
+    this.timestamp = timestamp;
+    this.name = name;
+    this.instance = instance;
+  }
 
 }

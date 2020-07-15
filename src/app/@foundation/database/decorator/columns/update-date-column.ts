@@ -1,5 +1,5 @@
 import {ColumnOptions, getMetadataArgsStorage} from "../../";
-import {ColumnMetadataArgs} from "../../metadata-args/ColumnMetadataArgs";
+import {ColumnMetadataArgs} from "../../metadata-args";
 
 /**
  * This column will store an update date of the updated object.
