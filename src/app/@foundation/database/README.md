@@ -28,6 +28,8 @@ Pull requests are more than welcome, as long as they don't break in capacitor.
 + [] Remove unsupported database options (e.g. array prop in metadata)
 + [] Add and refactor test suite
 + [] Figure out how to run migrations reliably on iOS and Android
++ [] ormconfig
++ [] custom cli for generating migrations
 
 ## Performance
 
