@@ -40,7 +40,7 @@ export class MigrationExecutor {
     const options = <SqliteConnectionOptions>this.connection.driver.options;
     this.migrationsTableName = connection.options.migrationsTableName || 'migrations';
     // @ts-ignore
-    this.migrationsTable = this.connection.driver.buildTableName(this.migrationsTableName, options.hasOwnProperty('schema') ? options.schema : undefined, options.database);
+    this.migrationsTable = this.connection.driver.buildTableName(this.migrationsTableName, undefined, options.database);
   }
 
   // -------------------------------------------------------------------------

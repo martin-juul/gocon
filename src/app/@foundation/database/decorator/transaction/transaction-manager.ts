@@ -1,5 +1,5 @@
 import {getMetadataArgsStorage} from "../../";
-import {TransactionEntityMetadataArgs} from "../../metadata-args/TransactionEntityMetadataArgs";
+import {TransactionEntityMetadataArgs} from "../../metadata-args";
 
 /**
  * Injects transaction's entity manager into the method wrapped with @Transaction decorator.

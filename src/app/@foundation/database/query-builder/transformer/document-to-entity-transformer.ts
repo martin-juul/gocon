@@ -79,8 +79,8 @@ export class DocumentToEntityTransformer {
       }
     });
 
-    const addEmbeddedValuesRecursively = (entity: any, document: any, embeddeds: EmbeddedMetadata[]) => {
-      embeddeds.forEach(embedded => {
+    const addEmbeddedValuesRecursively = (entity: any, document: any, embeds: EmbeddedMetadata[]) => {
+      embeds.forEach(embedded => {
         if (!document[embedded.prefix])
           return;
 

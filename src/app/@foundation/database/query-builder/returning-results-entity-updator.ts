@@ -61,6 +61,7 @@ export class ReturningResultsEntityUpdator {
                         .getOne();
 
                     if (loadedReturningColumns) {
+                        // @ts-ignore
                         this.queryRunner.manager.merge(metadata.target as any, entity, loadedReturningColumns);
                         updateResult.generatedMaps.push(loadedReturningColumns);
                     }
