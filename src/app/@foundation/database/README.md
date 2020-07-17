@@ -5,10 +5,25 @@ This is a fork of [typeorm](https://github.com/typeorm/typeorm) initially based 
 ionic capacitor support is why this exists. I've left in the other mobile drivers, but they're not tested.
 Pull requests are more than welcome, as long as they don't break in capacitor.
 
+## Drivers
+
++ cordova
++ expo
++ nativescript
++ sqlite
++ sqlite-abstract
++ sqljs
++ sql-in-memory
+
 ## Major Changes
 
-+ Stripped irrelevant drivers (postgres, mysql, sqlserver)
++ Stripped irrelevant drivers
 + Removed redis cache driver
 + Removed `options.schema` as they're not supported in the sqlite drivers
 + Renamed all files to use kebab-case
 + Added index.ts in all directories
+
+## TODO
+
++ [] Remove unsupported database options (e.g. array prop in metadata)
++ [] Add and refactor test suite
