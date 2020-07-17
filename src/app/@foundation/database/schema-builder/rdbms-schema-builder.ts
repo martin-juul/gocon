@@ -715,8 +715,7 @@ export class RdbmsSchemaBuilder implements SchemaBuilder {
    */
   protected async createTypeormMetadataTable() {
     const options = <SqliteConnectionOptions>this.connection.driver.options;
-    // @ts-ignore
-    const typeormMetadataTable = this.connection.driver.buildTableName('typeorm_metadata', options.schema, options.database);
+    const typeormMetadataTable = this.connection.driver.buildTableName('typeorm_metadata', undefined, options.database);
 
     await this.queryRunner.createTable(new Table(
       {

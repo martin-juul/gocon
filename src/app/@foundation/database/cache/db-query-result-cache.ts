@@ -4,10 +4,6 @@ import { QueryRunner } from '../query-runner/query-runner';
 import { Table } from '../schema-builder/table/Table';
 import { QueryResultCache } from './query-result-cache';
 import { QueryResultCacheOptions } from './query-result-cache-options';
-import { CommonConnectionOptions } from 'tls';
-import { SqljsConnectionOptions } from '../driver/sqljs/sqljs-connection-options';
-import { AbstractSqliteDriver } from '../driver/sqlite-abstract/abstract-sqlite-driver';
-import { BaseConnectionOptions } from '../connection/base-connection-options';
 import { SqliteConnectionOptions } from '../driver/sqlite';
 
 /**
@@ -31,8 +27,7 @@ export class DbQueryResultCache implements QueryResultCache {
     const cacheOptions = typeof this.connection.options.cache === 'object' ? this.connection.options.cache : {};
     const cacheTableName = cacheOptions.tableName || 'query-result-cache';
 
-    // @ts-ignore
-    this.queryResultCacheTable = this.connection.driver.buildTableName(cacheTableName, options.schema, options.database);
+    this.queryResultCacheTable = this.connection.driver.buildTableName(cacheTableName, undefined, options.database);
   }
 
   // -------------------------------------------------------------------------

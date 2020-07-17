@@ -1,0 +1,14 @@
+# @foundation/database
+
+This is a fork of [typeorm](https://github.com/typeorm/typeorm) initially based from [c23c888](https://github.com/typeorm/typeorm/commit/c23c88802cee33e377bc2ce85ed9aa2e6e1c14c8)
+
+ionic capacitor support is why this exists. I've left in the other mobile drivers, but they're not tested.
+Pull requests are more than welcome, as long as they don't break in capacitor.
+
+## Major Changes
+
++ Stripped irrelevant drivers (postgres, mysql, sqlserver)
++ Removed redis cache driver
++ Removed `options.schema` as they're not supported in the sqlite drivers
++ Renamed all files to use kebab-case
++ Added index.ts in all directories

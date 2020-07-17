@@ -39,7 +39,7 @@ export class EntitySchemaTransformer {
         target: options.target || options.name,
         name: options.tableName,
         database: options.database,
-        schema: options.schema,
+        // schema: options.schema,
         type: options.type || 'regular',
         orderBy: options.orderBy,
         synchronize: options.synchronize,
