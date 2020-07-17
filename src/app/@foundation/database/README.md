@@ -27,3 +27,12 @@ Pull requests are more than welcome, as long as they don't break in capacitor.
 
 + [] Remove unsupported database options (e.g. array prop in metadata)
 + [] Add and refactor test suite
++ [] Figure out how to run migrations reliably on iOS and Android
+
+## Performance
+
+Currently the aim is just to get typeorm to work in capacitor and electron.
+When basic querying is somewhat reliable, then the focus should be shifted towards performance improvements.
+
+Due to the sheer size of the awesome typeorm projects, there's a lot of duplicated code.
+Features that are too heavy to run on phones, should be stripped.
