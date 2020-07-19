@@ -13,7 +13,7 @@ import {
 } from '../error';
 import { DeepPartial } from '../common/deep-partial';
 import { AbstractRepository, RemoveOptions, RepositoryFactory, SaveOptions, TreeRepository } from '../repository';
-import { Repository } from '../repository/Repository';
+import { Repository } from '../repository/repository';
 import {
     PlainObjectToDatabaseEntityTransformer,
     PlainObjectToNewEntityTransformer,
@@ -578,7 +578,7 @@ export class EntityManager {
         // empty VALUES clause.
         if (Array.isArray(entity) && entity.length === 0)
             return Promise.resolve(new InsertResult());
-        
+
         return this.createQueryBuilder()
             .insert()
             .into(target)

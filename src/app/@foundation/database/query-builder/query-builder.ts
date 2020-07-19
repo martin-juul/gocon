@@ -9,7 +9,7 @@ import { SoftDeleteQueryBuilder } from './soft-delete-query-builder';
 import { InsertQueryBuilder } from './insert-query-builder';
 import { RelationQueryBuilder } from './relation-query-builder';
 import { QbjectType } from '..';
-import { Alias } from './Alias';
+import { Alias } from './alias';
 import { Brackets } from './brackets';
 import { QueryDeepPartialEntity } from './query-partial-entity';
 import { ColumnMetadata, EntityMetadata } from '../metadata';

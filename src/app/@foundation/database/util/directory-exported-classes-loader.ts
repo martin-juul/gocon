@@ -1,6 +1,6 @@
 import {PlatformTools} from "../platform";
 import {EntitySchema} from "../index";
-import {Logger} from "../logger/Logger";
+import {Logger} from "../logger/logger";
 /**
  * Loads all exported classes from the given directory.
  */

@@ -1,4 +1,4 @@
-import { Subject } from '../Subject';
+import { Subject } from '../subject';
 import { QueryRunner } from '../../query-runner';
 import { OrmUtils } from '../../util';
 

@@ -1,6 +1,6 @@
 import { ObjectLiteral } from '../common';
 import { EntityManager } from '../entity-manager';
-import { Repository } from './Repository';
+import { Repository } from './repository';
 import { TreeRepository } from './';
 import { QbjectType } from '..';
 import { CustomRepositoryDoesNotHaveEntityError, CustomRepositoryNotFoundError } from '../error';

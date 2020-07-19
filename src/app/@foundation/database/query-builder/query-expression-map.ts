@@ -1,4 +1,4 @@
-import { Alias } from './Alias';
+import { Alias } from './alias';
 import { ObjectLiteral } from '../common/object-literal';
 import { OrderByCondition } from '../find-options';
 import { JoinAttribute } from './join-attribute';

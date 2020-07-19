@@ -4,7 +4,7 @@ import { QbjectType } from '..';
 import { Connection } from '../connection';
 import { QueryRunner } from '../query-runner';
 import { WhereExpression } from './where-expression';
-import { Brackets } from './Brackets';
+import { Brackets } from './brackets';
 import { UpdateResult } from './result';
 import {
   LimitOnUpdateNotSupportedError,

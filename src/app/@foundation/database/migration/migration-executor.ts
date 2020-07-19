@@ -1,6 +1,6 @@
-import { Table } from '../schema-builder/table/Table';
+import { Table } from '../schema-builder/table/table';
 import { Connection } from '../connection/connection';
-import { Migration } from './Migration';
+import { Migration } from './migration';
 import { ObjectLiteral } from '../common/object-literal';
 import { PromiseUtils } from '../util';
 import { QueryRunner } from '../query-runner/query-runner';

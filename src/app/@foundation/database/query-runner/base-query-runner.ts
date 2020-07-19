@@ -1,12 +1,11 @@
-import { Query } from '../driver/Query';
+import { Query } from '../driver/query';
 import { SqlInMemory } from '../driver/sql-in-memory';
-import { View } from '../schema-builder/view/View';
+import { View } from '../schema-builder/view';
 import { PromiseUtils } from '../util';
-import { Connection } from '../connection/connection';
-import { Table } from '../schema-builder/table/Table';
+import { Connection } from '../connection';
+import { Table, TableColumn } from '../schema-builder/table';
 import { EntityManager } from '../entity-manager';
-import { TableColumn } from '../schema-builder/table';
-import { Broadcaster } from '../subscriber/Broadcaster';
+import { Broadcaster } from '../subscriber';
 import { SqliteConnectionOptions } from '../driver/sqlite';
 
 export abstract class BaseQueryRunner {

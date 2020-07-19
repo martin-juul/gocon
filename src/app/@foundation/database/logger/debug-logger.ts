@@ -1,4 +1,4 @@
-import { Logger } from './Logger';
+import { Logger } from './logger';
 import { QueryRunner } from '../';
 import { PlatformTools } from '../platform';
 

@@ -1,4 +1,4 @@
-import { Subject } from '../Subject';
+import { Subject } from '../subject';
 import { OrmUtils } from '../../util';
 import { ObjectLiteral } from '../../common/object-literal';
 import { RelationMetadata } from '../../metadata';

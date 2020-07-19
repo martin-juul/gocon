@@ -1,4 +1,4 @@
-import { Subject } from '../Subject';
+import { Subject } from '../subject';
 import { ObjectLiteral } from '../../common/object-literal';
 
 /**

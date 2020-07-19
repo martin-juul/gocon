@@ -1,6 +1,7 @@
-import { EntityManager, getConnection, getMetadataArgsStorage, Repository, TreeRepository } from '../../';
 import { TransactionOptions } from '../options';
 import { IsolationLevel } from '../../driver/types';
+import { EntityManager } from '../../entity-manager';
+import { getConnection, getMetadataArgsStorage, Repository, TreeRepository } from '../../index';
 
 /**
  * Wraps some method into the transaction.

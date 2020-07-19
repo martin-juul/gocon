@@ -1,6 +1,6 @@
 import { TreeRepository } from './';
 import { EntityMetadata } from '../metadata';
-import { Repository } from './Repository';
+import { Repository } from './repository';
 import { QueryRunner } from '../query-runner';
 import { EntityManager } from '../entity-manager';
 

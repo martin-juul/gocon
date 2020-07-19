@@ -1,7 +1,7 @@
 import { QueryRunner } from '../query-runner/query-runner';
-import { Subject } from './Subject';
+import { Subject } from './subject';
 import { PromiseUtils } from '../util';
-import { SubjectTopoligicalSorter } from './subject-topoligical-sorter';
+import { SubjectTopologicalSorter } from './subject-topological-sorter';
 import { SubjectChangedColumnsComputer } from './subject-changed-columns-computer';
 import { SubjectRemovedAndUpdatedError, SubjectWithoutIdentifierError } from '../error';
 import { ObjectLiteral } from '../common/object-literal';
@@ -119,7 +119,7 @@ export class SubjectExecutor {
 
     // execute all insert operations
     // console.time(".insertion");
-    this.insertSubjects = new SubjectTopoligicalSorter(this.insertSubjects).sort('insert');
+    this.insertSubjects = new SubjectTopologicalSorter(this.insertSubjects).sort('insert');
     await this.executeInsertOperations();
     // console.timeEnd(".insertion");
 
@@ -134,7 +134,7 @@ export class SubjectExecutor {
 
     // make sure our remove subjects are sorted (using topological sorting) when multiple entities are passed for the removal
     // console.time(".removal");
-    this.removeSubjects = new SubjectTopoligicalSorter(this.removeSubjects).sort('delete');
+    this.removeSubjects = new SubjectTopologicalSorter(this.removeSubjects).sort('delete');
     await this.executeRemoveOperations();
     // console.timeEnd(".removal");
 

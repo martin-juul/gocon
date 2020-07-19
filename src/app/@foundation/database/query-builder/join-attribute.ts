@@ -2,7 +2,7 @@ import { EntityMetadata, RelationMetadata } from '../metadata';
 import { Connection } from '../connection/connection';
 import { QueryBuilderUtils } from './query-builder-utils';
 import { QueryExpressionMap } from './query-expression-map';
-import { Alias } from './Alias';
+import { Alias } from './alias';
 import { ObjectUtils } from '../util';
 
 /**

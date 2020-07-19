@@ -2,7 +2,7 @@ import { Driver, QueryRunner } from '../..';
 import { RelationIdLoadResult } from '../relation-id';
 import { ObjectLiteral } from '../../common';
 import { ColumnMetadata, EntityMetadata, RelationMetadata } from '../../metadata';
-import { Alias } from '../Alias';
+import { Alias } from '../alias';
 import { RelationCountLoadResult } from '../relation-count';
 import { OrmUtils } from '../../util';
 import { QueryExpressionMap } from '../query-expression-map';

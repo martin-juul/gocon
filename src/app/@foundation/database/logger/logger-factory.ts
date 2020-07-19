@@ -1,4 +1,4 @@
-import { Logger } from './Logger';
+import { Logger } from './logger';
 import { LoggerOptions } from './logger-options';
 import { SimpleConsoleLogger } from './simple-console-logger';
 import { AdvancedConsoleLogger } from './advanced-console-logger';

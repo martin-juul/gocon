@@ -1,4 +1,4 @@
-import { Repository } from './Repository';
+import { Repository } from './repository';
 import { FindConditions, getConnection } from '../index';
 import { DeepPartial } from '../common';
 import { RemoveOptions, SaveOptions } from './';

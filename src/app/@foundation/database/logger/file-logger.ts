@@ -1,6 +1,6 @@
 import { LoggerOptions } from './logger-options';
 import { QueryRunner } from '../query-runner/query-runner';
-import { Logger } from './Logger';
+import { Logger } from './logger';
 import { PlatformTools } from '../platform';
 
 /**

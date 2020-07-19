@@ -1,4 +1,4 @@
-import { Driver } from '../Driver';
+import { Driver } from '../driver';
 import { ObjectLiteral } from '../../common';
 import { ColumnMetadata, EntityMetadata } from '../../metadata';
 import { ApplyValueTransformers, DateUtils, OrmUtils } from '../../util';

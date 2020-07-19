@@ -4,7 +4,7 @@ import { CannotDetermineEntityError, MustBeEntityError } from '../error';
 import { SubjectExecutor } from './subject-executor';
 import { QueryRunner } from '../query-runner/query-runner';
 import { Connection } from '../connection/connection';
-import { Subject } from './Subject';
+import { Subject } from './subject';
 import {
   CascadesSubjectBuilder,
   ManyToManySubjectBuilder,

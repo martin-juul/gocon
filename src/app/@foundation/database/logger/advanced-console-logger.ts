@@ -1,7 +1,7 @@
 import { LoggerOptions } from './logger-options';
 import { PlatformTools } from '../platform';
 import { QueryRunner } from '../query-runner/query-runner';
-import { Logger } from './Logger';
+import { Logger } from './logger';
 
 /**
  * Performs logging of the events in TypeORM.

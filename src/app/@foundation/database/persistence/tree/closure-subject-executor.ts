@@ -1,4 +1,4 @@
-import { Subject } from '../Subject';
+import { Subject } from '../subject';
 import { QueryRunner } from '../../query-runner';
 import { ObjectLiteral } from '../../common/object-literal';
 import { CannotAttachTreeChildrenEntityError } from '../../error';

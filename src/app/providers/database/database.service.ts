@@ -9,30 +9,38 @@ import { CapacitorSQLitePlugin } from 'capacitor-sqlite';
 export class DatabaseService {
   private driver: CapacitorSQLitePlugin;
 
+  private con;
+
   constructor(private platform: Platform) {
   }
 
   async openConnection() {
-    if (!this.driver) {
-      this.driver = SqliteFactory.make(this.platform);
-    }
+    this.con = await SqliteFactory.createTypeOrmConnection(this.platform);
 
-    try {
-      const r = await this.driver.open({
-        database: 'gocon',
-      });
-
-      console.debug('[DatabaseService]: Loaded with success', JSON.stringify(r));
-    } catch (e) {
-      console.error('[DatabaseService]: Failed loading', JSON.stringify(e));
-    }
-
-    return Promise.resolve();
+    console.log(this.con);
   }
 
-  async ping(): Promise<boolean> {
-    const res = await this.driver.echo({value: 'ping'});
+  /*  async openConnection() {
+      if (!this.driver) {
+        this.driver = SqliteFactory.make(this.platform);
+      }
 
-    return res.value === 'ping';
-  }
+      try {
+        const r = await this.driver.open({
+          database: 'gocon',
+        });
+
+        console.debug('[DatabaseService]: Loaded with success', JSON.stringify(r));
+      } catch (e) {
+        console.error('[DatabaseService]: Failed loading', JSON.stringify(e));
+      }
+
+      return Promise.resolve();
+    }
+
+    async ping(): Promise<boolean> {
+      const res = await this.driver.echo({value: 'ping'});
+
+      return res.value === 'ping';
+    }*/
 }

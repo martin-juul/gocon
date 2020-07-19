@@ -8,7 +8,7 @@ import { Table } from '../../schema-builder/table';
 import { TableIndex } from '../../schema-builder/table';
 import { TableForeignKey } from '../../schema-builder/table';
 import { View } from '../../schema-builder/view';
-import { Query } from '../Query';
+import { Query } from '../query';
 import { AbstractSqliteDriver } from './abstract-sqlite-driver';
 import { TableIndexOptions } from '../../schema-builder/options';
 import { TableUnique } from '../../schema-builder/table';

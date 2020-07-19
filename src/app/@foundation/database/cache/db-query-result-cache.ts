@@ -1,7 +1,7 @@
 import { ObjectLiteral } from '../common/object-literal';
 import { Connection } from '../connection/connection';
 import { QueryRunner } from '../query-runner/query-runner';
-import { Table } from '../schema-builder/table/Table';
+import { Table } from '../schema-builder/table/table';
 import { QueryResultCache } from './query-result-cache';
 import { QueryResultCacheOptions } from './query-result-cache-options';
 import { SqliteConnectionOptions } from '../driver/sqlite';

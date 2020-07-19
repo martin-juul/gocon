@@ -6,14 +6,14 @@ import {
     TableIndex,
     TableUnique,
 } from '../schema-builder/table';
-import { Table } from '../schema-builder/table/Table';
+import { Table } from '../schema-builder/table';
 import { Connection } from '../connection/connection';
 import { ReadStream } from '../platform';
 import { EntityManager } from '../entity-manager';
 import { ObjectLiteral } from '../common/object-literal';
 import { SqlInMemory } from '../driver/sql-in-memory';
-import { View } from '../schema-builder/view/View';
-import { Broadcaster } from '../subscriber/Broadcaster';
+import { View } from '../schema-builder/view';
+import { Broadcaster } from '../subscriber';
 import { IsolationLevel } from '../driver/types';
 
 /**

@@ -1,4 +1,4 @@
-import { Subject } from './Subject';
+import { Subject } from './subject';
 import { ApplyValueTransformers, DateUtils, OrmUtils } from '../util';
 import { ObjectLiteral } from '../common/object-literal';
 

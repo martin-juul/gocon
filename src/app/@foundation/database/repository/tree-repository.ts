@@ -1,4 +1,4 @@
-import { Repository } from './Repository';
+import { Repository } from './repository';
 import { SelectQueryBuilder } from '../query-builder';
 import { ObjectLiteral } from '../common';
 import { AbstractSqliteDriver } from '../driver/sqlite-abstract';

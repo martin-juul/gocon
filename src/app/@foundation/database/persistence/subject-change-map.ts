@@ -1,5 +1,5 @@
 import { ColumnMetadata, RelationMetadata } from '../metadata';
-import { Subject } from './Subject';
+import { Subject } from './subject';
 
 /**
  * Change for insertion or updation of the column of the subject.
