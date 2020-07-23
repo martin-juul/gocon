@@ -33,7 +33,7 @@
     "capacitor-sqlite": "^2.2.1-2",
     "ionic-logging-service": "^10.0.0",
     "ionic-logging-viewer": "^10.0.0",
-    "rxjs": "~6.5.1",
+    "rxjs": "~6.6.0",
     "sha.js": "^2.4.11",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
