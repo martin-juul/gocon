@@ -1041,10 +1041,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@capacitor/ios@2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-2.2.1.tgz#f410a31843ef10eb2c908f6a634d16439915c420"
-  integrity sha512-+nGonZvaVE4pcWWFHb0Euad8pP01Dn8+tJaZwEq/TkZ0qAjZ9uAKPVqvChshBM5W0DtZF/t1uNUU7ELcGsAFIA==
+"@capacitor/ios@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-2.3.0.tgz#361bc00b3b773ced5389b287caa6816e1d31b045"
+  integrity sha512-RQYY8It3dPOhZs5kCymnt02NxSCNo90Etgc6bnUjzB7IqQRFNRJ/f56vWb9F61wKOVDrUPJkoeDpXt76Svd+Nw==
 
 "@ionic-native/core@^5.0.7":
   version "5.27.0"

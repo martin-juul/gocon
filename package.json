@@ -27,7 +27,7 @@
     "@capacitor-community/electron": "^0.4.1",
     "@capacitor/android": "2.2.1",
     "@capacitor/core": "2.2.1",
-    "@capacitor/ios": "2.2.1",
+    "@capacitor/ios": "2.3.0",
     "@ionic-native/core": "^5.0.7",
     "@ionic/angular": "^5.0.0",
     "capacitor-sqlite": "^2.2.1-2",
