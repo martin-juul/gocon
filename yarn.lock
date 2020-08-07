@@ -1003,10 +1003,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@capacitor-community/electron@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@capacitor-community/electron/-/electron-0.4.1.tgz#ed8d7e67a3879cfa96fb2471427aa65301b4198d"
-  integrity sha512-+q3db4YhfQhXDPapP+NJL2fHS82QunPVZNNKgmT8CKamGD6BOt6S3lDwCWgBNP3ipko6TrHWRi/FuIf8EFWE9Q==
+"@capacitor-community/electron@^0.5.1":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@capacitor-community/electron/-/electron-0.5.4.tgz#09ca12b6d9cb370027e82453a7e46d0316f37be3"
+  integrity sha512-v/tmwqhPWu0d+naYRbp/TNxapDefiK7O/bbdvlouC4moA/0q3zL+SJzgpC2GSOmqVgZxbOQ82blqG+ysNqFJjw==
   dependencies:
     chalk "^4.1.0"
     fs-extra "^8.1.0"
