@@ -7,21 +7,21 @@
   resolved "https://registry.yarnpkg.com/7zip-bin/-/7zip-bin-5.0.3.tgz#bc5b5532ecafd923a61f2fb097e3b108c0106a3f"
   integrity sha512-GLyWIFBbGvpKPGo55JyRZAo4lVbnBiD52cKlw/0Vt+wnmKvWJkpZvsjVoaIolyBXDeAQKSicRtqFNPem9w0WYA==
 
-"@capacitor-community/electron-core@latest":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@capacitor-community/electron-core/-/electron-core-0.4.1.tgz#2c99cda67597c6c27a8047a932d2e3078d3ca6e2"
-  integrity sha512-D+j2ljom2UqWBrWppHMg/Byz1KPisRsFuWf2JjfXPBfq00FWaZPoi0zhsjuuSLfbqAKtQsEc5QmrQmQcfNw3yw==
+"@capacitor-community/electron-core@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@capacitor-community/electron-core/-/electron-core-1.0.2.tgz#f41a29dc815d27803b70d217c711d374307b7099"
+  integrity sha512-w75iOnuu82SlpScb/rQEZXVCJOQ7BI5lqtllmF/2slh1r/2p/1S6JfT/fTbkOoIz/rfu7DtFBTrREoHKWyNkQg==
   dependencies:
-    "@capacitor/core" latest
-    electron "~9.0.0"
+    "@capacitor/core" "^2.0.0"
+    electron "^9.1.1"
     electron-is-dev "^1.2.0"
     electron-serve "^1.0.0"
     mime-types "~2.1.27"
 
-"@capacitor/core@latest":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-2.2.1.tgz#20f07d35c4af3650eed90cbfd0d5c260cbb59ba5"
-  integrity sha512-Qbx+4woY24Ixb74zizaKAJur/gpFDwdZAZbZtXIc5yNhyaD13XLyqwLm5LTI1CKw7Vc7xoENUaWLqNQYtr6v2g==
+"@capacitor/core@^2.0.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-2.4.0.tgz#5f3741153d87901e5c14c9037b6634bd24df5e77"
+  integrity sha512-zL+3yKjLNkU6QwIB/Fp9rg+qDLsO44/ibrIgaZZRXcDCwScwanjXCgco/jXQl3jGFcZzanm59wKhMcJr9xQH0Q==
   dependencies:
     tslib "^1.9.0"
 
@@ -876,7 +876,16 @@ electron-serve@^1.0.0:
   resolved "https://registry.yarnpkg.com/electron-serve/-/electron-serve-1.0.0.tgz#babf2f5022102fa300a841d91e4c2e7048ac4b1f"
   integrity sha512-Rsm4tjj1eK7NUWKgGw6NjHkjfB+bIXZh0ztybUYzqmwCm1wzb7zv95LERbwricDZfCsKHB0V57NgVvHdi2OOAQ==
 
-electron@~9.0.0, electron@~9.0.3:
+electron@^9.1.1:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-9.3.0.tgz#a4f3dc17f31acc6797eb4c2c4bd0d0e25efb939b"
+  integrity sha512-7zPLEZ+kOjVJqfawMQ0vVuZZRqvZIeiID3tbjjbVybbxXIlFMpZ2jogoh7PV3rLrtm+dKRfu7Qc4E7ob1d0FqQ==
+  dependencies:
+    "@electron/get" "^1.0.1"
+    "@types/node" "^12.0.12"
+    extract-zip "^1.0.3"
+
+electron@~9.0.3:
   version "9.0.5"
   resolved "https://registry.yarnpkg.com/electron/-/electron-9.0.5.tgz#189ee117cc2a2777cccf40fae0766acec5faae57"
   integrity sha512-bnL9H48LuQ250DML8xUscsKiuSu+xv5umXbpBXYJ0BfvYVmFfNbG3jCfhrsH7aP6UcQKVxOG1R/oQExd0EFneQ==
