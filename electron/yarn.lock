@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/7zip-bin/-/7zip-bin-5.0.3.tgz#bc5b5532ecafd923a61f2fb097e3b108c0106a3f"
   integrity sha512-GLyWIFBbGvpKPGo55JyRZAo4lVbnBiD52cKlw/0Vt+wnmKvWJkpZvsjVoaIolyBXDeAQKSicRtqFNPem9w0WYA==
 
-"@capacitor-community/electron-core@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@capacitor-community/electron-core/-/electron-core-1.0.2.tgz#f41a29dc815d27803b70d217c711d374307b7099"
-  integrity sha512-w75iOnuu82SlpScb/rQEZXVCJOQ7BI5lqtllmF/2slh1r/2p/1S6JfT/fTbkOoIz/rfu7DtFBTrREoHKWyNkQg==
+"@capacitor-community/electron-core@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@capacitor-community/electron-core/-/electron-core-1.2.3.tgz#1604dd86d9a42584ecfe2d73823fb1e783e8fa52"
+  integrity sha512-ggPZeCc2+pdhtDSku2PX2XkZ+2kjwLgUtLq3TPeY0jXzsoay0Ez/C37USAdLsa0EwxdDuLIFIsfD3y7dZENPGg==
   dependencies:
     "@capacitor/core" "^2.0.0"
     electron "^9.1.1"
