@@ -1012,10 +1012,10 @@
     fs-extra "^8.1.0"
     ora "^4.0.4"
 
-"@capacitor/android@2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-2.2.1.tgz#20b722d634cb7b9e12aa6612e22f1f37dbbc57ca"
-  integrity sha512-EWrzpufsxBsRWu+cWXP/3w8C7q2nYDOcsbF2MHO1r1ScsEbw1DPRzwVylo/9q457UJDpRU7jwMl3A9CWAM3j0g==
+"@capacitor/android@2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-2.4.5.tgz#7ceefd0857eb2f789225bfb88f7467bfa3409125"
+  integrity sha512-LwnOPc1/luS3RqCiKx9l5qQtxQfFu4YW2r4U8Ko1Lr91i9Ibix1ChWqnvsBlcrdeNdhmMrW2v53mn22oT4F6oA==
 
 "@capacitor/cli@2.2.1":
   version "2.2.1"
@@ -2234,16 +2234,6 @@ cache-base@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cache-base/-/cache-base-1.0.1.tgz#0a7f46416831c8b662ee36fe4e7c59d76f666ab2"
   integrity sha512-AKcdTnFSWATd5/GCPRxr2ChwIJ85CeyrEyjRHlKxQ56d4XJMGym0uAiKn0xbLOGOl3+yRpOTi484dVCEc5AUzQ==
-  dependencies:
-    collection-visit "^1.0.0"
-    component-emitter "^1.2.1"
-    get-value "^2.0.6"
-    has-value "^1.0.0"
-    isobject "^3.0.1"
-    set-value "^2.0.0"
-    to-object-path "^0.3.0"
-    union-value "^1.0.0"
-    unset-value "^1.0.0"
 
 caller-callsite@^2.0.0:
   version "2.0.0"
