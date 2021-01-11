@@ -26,7 +26,7 @@
     "@angular/router": "~9.1.6",
     "@capacitor-community/electron": "^0.4.1",
     "@capacitor/android": "2.2.1",
-    "@capacitor/core": "2.2.1",
+    "@capacitor/core": "2.4.5",
     "@capacitor/ios": "2.2.1",
     "@ionic-native/core": "^5.0.7",
     "@ionic/angular": "^5.0.0",
